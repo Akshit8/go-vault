@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    services:
+      vault:
+        image: vault:1.7.1
+        env:
+          VAULT_DEV_ROOT_TOKEN_ID: myroot
+          VAULT_DEV_LISTEN_ADDRESS: 0.0.0.0:8300
+        ports:
+          - 8300:8300
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.16
+
+      - name: Run tests
+        run: |
+          go test ./...
