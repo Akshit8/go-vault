@@ -9,7 +9,7 @@ import (
 
 func main() {
 	vaultPath := "/secret"                // NOTE: use config tool of your choice to load this value
-	vaultToken := "myroot"                // NOTE: use config tool of your choice to load this value
+	vaultToken := "secrettoken"           // NOTE: use config tool of your choice to load this value
 	vaultAddress := "http://0.0.0.0:8300" // NOTE: use config tool of your choice to load this value
 
 	provider, err := secret.NewVaultProvider(vaultToken, vaultAddress, vaultPath)

@@ -18,7 +18,7 @@ type vaultClient struct {
 }
 
 func newVaultClient(t *testing.T) *vaultClient {
-	token := "myroot"
+	token := "secrettoken"
 	addr := "http://0.0.0.0:8300"
 	path := "/secret"
 
