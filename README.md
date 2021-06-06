@@ -1,5 +1,19 @@
 # Secret management with Hashicorp Vault
 
+Using env files to manage application configuration has been a de-facto standard for a while now.
+
+<br/>
+
+With deployment pipelenes growing more complex and web-service becoming cloud-native, logic to securely manage and rotate these secrets on different stages often occupies a large percentage of our source code.
+
+<br/>
+
+Many tools and services are emerging to solve this problem, and one of the most popular among them is Hashicorp Vault.
+
+<br/>
+
+It provides a dedicated server managing secrets, encryption of data, and easy access protocol, additionally it's 100% cloud-native.
+
 ## Setting up Vault using Docker
 
 Using `docker-compose`
@@ -8,7 +22,7 @@ Using `docker-compose`
 docker-compose up -d
 ```
 
-Using `docker cli`
+Using `docker-cli`
 
 ```bash
 docker run \
@@ -47,11 +61,11 @@ go test ./...
 
 ## Usage of default KV engine in unit tests
 
-Since the Vault API client is developed to read data from the vault and not the other way around, creating a new engine is not possible, hence using default `secret` engine is only option.
+Since the Vault API client is developed to read data from the vault and not the other way around, creating a new engine for test is not possible, therefore using default `secret` engine.
 
 ## Ideas for configuration pipeline
 
-While writing a microservice, combine-usage of Vault and env files can provide a robust way to inject secrets in our app.
+While writing a microservice, combine-usage of Vault and env files can provide a robust way to inject secrets inside our app.
 
 - env files can contain non-sensitive values along with paths(for Vault) for secrets.
 - Vault can be configured, and used to inject sensitive values like passwords, API keys and other credentials.
