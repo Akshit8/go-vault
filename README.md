@@ -2,7 +2,7 @@
 
 Using env files to manage application configuration has been a de-facto standard for a while now.<br/>
 
-With deployment pipelenes growing more complex and web-service becoming cloud-native, logic to securely manage and rotate these secrets on different stages often occupies a large percentage of our source code.<br/>
+With deployment pipelines growing more complex and web-service becoming cloud-native, logic to securely manage and rotate these secrets on different stages often occupies a large percentage of our source code.<br/>
 
 Many tools and services are emerging to solve this problem, and one of the most popular among them is Hashicorp Vault.<br/>
 
